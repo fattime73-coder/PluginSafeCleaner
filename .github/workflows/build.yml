@@ -1,0 +1,25 @@
+name: Build and test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  macos:
+    runs-on: macos-15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Run safety tests
+        run: ./test.sh
+
+      - name: Build application
+        run: ./make_app.sh
+
+      - name: Upload application
+        uses: actions/upload-artifact@v4
+        with:
+          name: PluginSafeCleaner
+          path: dist/PluginSafeCleaner.zip
+          if-no-files-found: error
