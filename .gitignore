@@ -3,3 +3,19 @@
 dist/
 *.xcuserstate
 xcuserdata/
+
+# Local Xcode state and private credentials
+DerivedData/
+*.xcscmblueprint
+*.xccheckout
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.mobileprovision
+client_secret*.json
+credentials*.json
+secrets.json
+.netrc
